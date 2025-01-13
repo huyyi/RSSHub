@@ -53,14 +53,14 @@ export const route: Route = {
         const data = JSON.parse(dataRaw);
         const itemsRaw = data.list;
         const items = itemsRaw.map((item) => ({
-                title: item.title,
-                link: item.sourceWebUrl,
-                author: item.user_nick_name,
-                category: item.board_name,
-                img: item.pic_path,
-                pubDate: timezone(parseDate(item.last_reply_date), +8),
-                description: item.subject,
-            }));
+            title: item.title,
+            link: `https://bbs.uestc.edu.cn/thread/${item.topic_id}`,
+            author: item.user_nick_name,
+            category: item.board_name,
+            img: item.pic_path,
+            pubDate: timezone(parseDate(item.last_reply_date), +8),
+            description: item.subject,
+        }));
         return {
             // 源标题
             title: '清水河畔',
