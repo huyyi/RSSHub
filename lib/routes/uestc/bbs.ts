@@ -60,6 +60,8 @@ export const route: Route = {
             img: item.pic_path,
             pubDate: timezone(parseDate(item.last_reply_date), +8),
             description: item.subject,
+            upvotes: item.hits,
+            comments: item.replies,
         }));
         return {
             // 源标题
