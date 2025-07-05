@@ -339,8 +339,8 @@ export type Config = {
         thirdPartyApi?: string;
     };
     uestc: {
-        bbsToken?: string;
-        bbsSecret?: string;
+        bbs_token?: string;
+        bbs_secret?: string;
     };
     weibo: {
         app_key?: string;
@@ -770,8 +770,8 @@ const calculateValue = () => {
             thirdPartyApi: envs.TWITTER_THIRD_PARTY_API,
         },
         uestc: {
-            bbsCookie: envs.UESTC_BBS_TOKEN,
-            bbsAuthStr: envs.UESTC_BBS_SECRET,
+            bbs_token: envs.UESTC_BBS_TOKEN,
+            bbs_secret: envs.UESTC_BBS_SECRET,
         },
         weibo: {
             app_key: envs.WEIBO_APP_KEY,
