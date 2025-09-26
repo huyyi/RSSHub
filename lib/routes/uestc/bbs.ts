@@ -50,8 +50,7 @@ export const route: Route = {
         const { bbs_token, bbs_secret } = config.uestc;
         const authStr = bbs_token && bbs_secret ? `&accessToken=${bbs_token}&accessSecret=${bbs_secret}` : '';
         const dataRaw = await ofetch(`https://bbs.uestc.edu.cn/mobcent/app/web/index.php?r=forum%2Ftopiclist&isImageList=1&page=1&pageSize=25&sortby=new${authStr}`);
-        const data = JSON.parse(dataRaw);
-        const itemsRaw = data.list;
+        const itemsRaw = dataRaw.list;
         const items = itemsRaw.map((item) => ({
             title: item.title,
             link: `https://bbs.uestc.edu.cn/thread/${item.topic_id}`,
